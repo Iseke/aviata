@@ -30,6 +30,8 @@ def try_cache():
         res = requests.get(params=data, url=url)
         cur_data = res.json()['data']
         data = cache.set(direc, cur_data, 60*60*24)
+        # 60*60*24 mean 24hour
+        # create cache for every direction
         print(data)
     return 'ok'
 
